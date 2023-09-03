@@ -86,7 +86,7 @@ function Home() {
                     <Center style={{flexDirection: "column", marginBottom: "3vw"}}>
                         <Center className="CategoryBox">
                             <Title>
-                                <Ttitle>상품 목록😋</Ttitle>
+                                <Ttitle>상품 목록먀😋</Ttitle>
                                 <More href="/signup">더 보기</More>
                             </Title>
                         </Center>
