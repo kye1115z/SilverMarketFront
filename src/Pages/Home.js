@@ -32,7 +32,7 @@ function Home() {
     const getProduct = async() => {
         try {
             const res = await axios.get(
-                    "http://ec2-54-180-79-79.ap-northeast-2.compute.amazonaws.com:8080/api/products/"
+                    "http://ec2-54-180-79-79.ap-northeast-2.compute.amazonaws.com/api/products/"
                 )
             setProduct(res.data)
             console.log(res.data)
