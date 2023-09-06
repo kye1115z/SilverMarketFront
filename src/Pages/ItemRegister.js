@@ -48,7 +48,7 @@ export default function ItemRegister() {
             <img src="../img/cameraLogo.svg" style={{marginBottom: "20px"}}/>
             동영상으로 <br /> 등록하기
           </Button>
-          <Button onClick={() => {window.location.href="/itemvideoregister"}}>
+          <Button onClick={() => {window.location.href="/itemselfregister"}}>
             <img src="../img/pencilLogo.svg" style={{marginBottom: "20px"}}/>
             직접 <br /> 등록하기
           </Button>

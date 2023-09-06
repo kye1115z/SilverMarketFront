@@ -5,7 +5,10 @@ import GlobalStyle from "../GlobalStyle";
 import { Container, Text, Input } from "../styles/basicStyles.js";
 import axios from "axios";
 
-
+const user = {
+  id: "test1234",
+  pw: "asdf1234!"
+}
 
 export default function Login() {
   const [ID, setID] = useState("");
@@ -85,7 +88,13 @@ export default function Login() {
         //     }
         // );
         // console.log(res.data.detail);
-        navigate("/");
+
+        // 연결 안 될 시
+        if(ID === user.id && pw === user.pw) {
+          navigate("/");
+        } else {
+          alert("아이디 혹은 비밀번호가 틀렸습니다!")
+        }
     }
     catch (e) {
         console.error(e);

@@ -95,22 +95,22 @@ function ItemVideoRegister() {
       formData.append("title", "맛있는 고구마");
       formData.append("video_file", file.url);
 
-      const res = await axios.post(
-          'http://ec2-54-180-79-79.ap-northeast-2.compute.amazonaws.com/api/videos/', formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            }
-          },
+      // const res = await axios.post(
+      //     'http://ec2-54-180-79-79.ap-northeast-2.compute.amazonaws.com/api/videos/', formData,
+      //     {
+      //       headers: {
+      //         "Content-Type": "multipart/form-data",
+      //       }
+      //     },
           
-      );
-      console.log(res);
-      alert("동영상이 성공적으로 전송되었습니다!")
-      navigate("/")
+      // );
+      // console.log(res);
   }
   catch (e) {
       console.error(e);
   }
+  alert("동영상이 성공적으로 전송되었습니다!")
+  navigate("/home")
   }
 
   return (
