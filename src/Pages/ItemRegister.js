@@ -5,9 +5,6 @@ import {
   Container,
   Header,
   HeaderText,
-  Input,
-  InputTitle,
-  Button,
 } from "../styles/basicStyles";
 import { GoChevronLeft } from "react-icons/go";
 

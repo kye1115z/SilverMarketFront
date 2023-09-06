@@ -131,8 +131,7 @@ function ItemSelfRegister() {
     isQuantityValid &&
     isDetailValid;
 
-  // 버튼 색상
-  const [color, setColor] = useState("");
+
   const Btn = styled.button`
     width: 40%;
     height: 48px;
@@ -206,8 +205,11 @@ function ItemSelfRegister() {
   catch (e) {
       console.error(e);
   }
-  };
 
+  alert("등록이 완료되었습니다!")
+  navigate("/")
+
+  };
 
   return (
     <>

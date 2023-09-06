@@ -32,8 +32,8 @@ function Home() {
     const getProduct = async() => {
         try {
             const res = await axios.get(
-                    "http://ec2-54-180-79-79.ap-northeast-2.compute.amazonaws.com/api/products/"
-                )
+                "http://ec2-54-180-79-79.ap-northeast-2.compute.amazonaws.com/api/products/"
+            )
             setProduct(res.data)
             console.log(res.data)
         }
@@ -42,15 +42,11 @@ function Home() {
         }
     };
 
+
     useEffect(()=>{
         getProduct()
     }, [])
 
-    //반복 함수. v로 읽음.
-    // const CateList = product.map((v) => (<CategoryList name={v.name} icon={v.photo}/>))
-    // const BestList = product.map((v) => (<BestProduct name={v[1]} icon={v[2]} price={v[3]}/>))
-
-        
     return (
         <> 
         <GlobalStyle />
@@ -86,7 +82,7 @@ function Home() {
                     <Center style={{flexDirection: "column", marginBottom: "3vw"}}>
                         <Center className="CategoryBox">
                             <Title>
-                                <Ttitle>상품 목록먀😋</Ttitle>
+                                <Ttitle>상품 목록😋</Ttitle>
                                 <More href="/signup">더 보기</More>
                             </Title>
                         </Center>
