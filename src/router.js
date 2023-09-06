@@ -16,16 +16,20 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        
+        <Route path="/" element={<First />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/itemregister" element={<ItemRegister />} />
+
         <Route path="/detail" element={<Detail />} />
         <Route path="/order" element={<Order />} />
         <Route path="/confirmOrder" element={<ConfirmOrder />} />
-        <Route path="/first" element={<First />} />
-        <Route path="/itemregister" element={<ItemRegister />} />
+
         <Route path="/itemselfregister" element={<ItemSelfRegister />} />
         <Route path="/itemvideoregister" element={<ItemVideoRegister />} />
+        
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/guide" element={<GuideSlider />} />
       </Routes>

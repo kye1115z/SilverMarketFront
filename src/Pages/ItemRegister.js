@@ -18,8 +18,13 @@ export default function ItemRegister() {
     width: 136px;
     height: 70vw;
     margin: 10px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 140%;
   `;
 
   return (
@@ -38,15 +43,24 @@ export default function ItemRegister() {
         <HeaderText>상품 등록 방법 선택</HeaderText>
       </Header>
       <Container>
-        <row>
-          <Button onClick={() => {window.location.href="/itemvideoregister"}}>동영상으로 <br /> 등록하기</Button>
-          <Button onClick={() => {window.location.href="/itemselfregister"}}>직접 <br /> 등록하기</Button>
-        </row>
+        <div style={{display: "flex"}}>
+          <Button onClick={() => {window.location.href="/itemvideoregister"}}>
+            <img src="../img/cameraLogo.svg" style={{marginBottom: "20px"}}/>
+            동영상으로 <br /> 등록하기
+          </Button>
+          <Button onClick={() => {window.location.href="/itemvideoregister"}}>
+            <img src="../img/pencilLogo.svg" style={{marginBottom: "20px"}}/>
+            직접 <br /> 등록하기
+          </Button>
+        </div>
         <Button 
-          style={{width: "75vw", height: "136px"}}
+          style={{width: "75vw", height: "136px", flexDirection: "row"}}
           onClick={() => {window.location.href="/guide"}}>
-            <p style={{fontSize: "0.8rem", fontWeight: "normal"}}>등록 방법을 모르겠다면?</p>
-            상품 등록 가이드 보기
+            <img src="../img/questionmark.svg" style={{marginRight: "20px"}}/>
+            <div style={{display: "flex", alignItems: "flex-start", flexDirection: "column"}}>
+              <p style={{fontSize: "0.8rem", fontWeight: "normal"}}>등록 방법을 모르겠다면?</p>
+              <p>상품 등록 가이드 보기</p>
+            </div>
         </Button>
       </Container>
     </>

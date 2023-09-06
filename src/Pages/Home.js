@@ -19,10 +19,10 @@ function Home() {
     ]
 
     const best = [
-        [1, "[당일배송] 빨간색 파프리카", "../img/fruit.svg", '5,000₩'],
-        [2, "신선한 양고기 1kg 숙성 냉장 양제비추리 어찌구 저찌구", "../img/vegetable.svg", '50,000₩'],
-        [3, "유제품", "../img/diary.svg", '1₩'],
-        [4, "고기", "../img/meat.svg", '500,000₩']
+        [1, "[당일배송] 빨간색 파프리카", "https://sitem.ssgcdn.com/42/58/26/item/1000545265842_i1_334.jpg", '5,000₩'],
+        [2, "신선한 양고기 1kg 숙성 냉장 양제비추리 1kg", "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/1876246968/B.jpg?78000000", '50,000₩'],
+        [3, "아메리칸 치즈 슬라이스 2.27kg", "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/3186243628/B.jpg?323000000", '1₩'],
+        [4, "소고기 안심", "https://contents.lotteon.com/itemimage/20230817110144/LO/21/67/35/49/78/bndl_img/LO2167354978_1.jpg/dims/optimize/dims/resizemc/400x400", '500,000₩']
     ]
         
     const [product, setProduct] = useState();
@@ -83,7 +83,7 @@ function Home() {
                         <Center className="CategoryBox">
                             <Title>
                                 <Ttitle>상품 목록😋</Ttitle>
-                                <More href="/signup">더 보기</More>
+                                <More>더 보기</More>
                             </Title>
                         </Center>
                         <Center 
@@ -96,9 +96,12 @@ function Home() {
                         <Center className="CategoryBox">
                             <Title>
                                 <Ttitle>인기 상품🔥</Ttitle>
-                                <More href="/signup">더 보기</More>
+                                <More>더 보기</More>
                             </Title>
                         </Center>
+                    </Center>
+                </Container>
+                        {/* 백엔드 연결 시
                         {product&&product.map((item, index) => 
                         <Box 
                             key={index}
@@ -106,9 +109,19 @@ function Home() {
                             style={{display: "flow"}}>
                             <BestProduct name={item.products_name} icon={item.photo} price={item.id} id={item.id} />
                         </Box>
+                        )} */}
+
+                        {/* 백엔드 미연결 시 */}
+                        {best&&best.map((item, index) => 
+                        <div 
+                            key={index}>
+                            <BestProduct 
+                                name={item[1]} 
+                                icon={item[2]} 
+                                price={item[3]} 
+                                id={item[0]} />
+                        </div>
                         )}
-                    </Center>
-                </Container>
                 <Footer />
             </div>
         </>
@@ -165,4 +178,8 @@ const More = styled.a`
 
 const Box = styled.div`
     width: 100%;
+    background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 `;
