@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+
 function BestProduct(lists) {
     const navigate = useNavigate();
     const [id, setId] = useState("")

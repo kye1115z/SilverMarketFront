@@ -39,6 +39,7 @@ function Detail() {
     const [info, setInfo] = useState({});
     //리스트 받아오기
     const getID = async() => {
+        console.log(location.state)
         try {
             const res = await axios.get(
                 `http://127.0.0.1:8000/api/products/${location.state.id}`

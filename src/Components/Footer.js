@@ -3,6 +3,7 @@ import GlobalStyle from "../GlobalStyle";
 import { GoHomeFill, GoHeartFill, GoPersonFill } from "react-icons/go";
 import { FaBox } from "react-icons/fa";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Footer() {
     const [select, setSelect] = useState("home");
@@ -20,45 +21,33 @@ function Footer() {
                 display: "flex", justifyContent: "space-between", alignItems: "center",
                 width: "85%", height: "100%", 
             }}>
-                <Btn onClick={() => {
-                    setSelect('home')
-                    alert(select)
-                }}>
+                <NavLink to='/home' onClick={() => setSelect("home")}>
                     <GoHomeFill style={{
-                        width: "45px", height: "45px",
-                        color: select === 'home' ? "#23AA49" : "#F3F5F7"
+                        width: "43px", height: "43px",
+                        color: "#23AA49"
                     }}/>
-                </Btn>
+                </NavLink>
 
-                <Btn onClick={() => {
-                    setSelect('favo')
-                    window.location.href="/favo"
-                }}>
+                <NavLink to='/favo' onClick={() => setSelect("favo")}>
                     <GoHeartFill  style={{
-                        width: "45px", height: "45px",
-                        color: select === 'favo' ? "#23AA49" : "#F3F5F7"
+                        width: "43px", height: "43px",
+                        color: "#23AA49"
                     }}/>
-                </Btn>
+                </NavLink>
 
-                <Btn onClick={() => {
-                    setSelect('deliver')
-                    window.location.href="/deliver"
-                }}>
+                <NavLink to='/deliver' onClick={() => setSelect("deliver")}>
                     <FaBox  style={{
-                        width: "45px", height: "45px",
-                        color: select === 'deliver' ? "#23AA49" : "#F3F5F7"
+                        width: "40px", height: "40px",
+                        color: "#23AA49"
                     }}/>
-                </Btn>
-                
-                <Btn onClick={() => {
-                    setSelect('mypage')
-                    window.location.href="/mypage"
-                }}>
+                </NavLink>
+
+                <NavLink to='/mypage' onClick={() => setSelect("mypage")}>
                     <GoPersonFill  style={{
-                        width: "45px", height: "45px",
-                        color: select === 'mypage' ? "#23AA49" : "#F3F5F7"
+                        width: "43px", height: "43px",
+                        color: "#23AA49"
                     }}/>
-                </Btn>
+                </NavLink>
             </div>
         </Box>
         </>

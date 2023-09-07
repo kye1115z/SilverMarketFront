@@ -19,20 +19,22 @@ function Home() {
     ]
 
     const best = [
-        [1, "[당일배송] 빨간색 파프리카", "https://sitem.ssgcdn.com/42/58/26/item/1000545265842_i1_334.jpg", '5,000₩'],
-        [2, "신선한 양고기 1kg 숙성 냉장 양제비추리 1kg", "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/1876246968/B.jpg?78000000", '50,000₩'],
-        [3, "아메리칸 치즈 슬라이스 2.27kg", "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/3186243628/B.jpg?323000000", '1₩'],
-        [4, "소고기 안심", "https://contents.lotteon.com/itemimage/20230817110144/LO/21/67/35/49/78/bndl_img/LO2167354978_1.jpg/dims/optimize/dims/resizemc/400x400", '500,000₩']
+        [1, "[당일배송] 빨간색 파프리카", "https://sitem.ssgcdn.com/42/58/26/item/1000545265842_i1_334.jpg", '5,000₩', '채소'],
+        [2, "신선한 양고기 1kg 숙성 냉장 양제비추리 1kg", "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/1876246968/B.jpg?78000000", '50,000₩', '고기'],
+        [3, "아메리칸 치즈 슬라이스 2.27kg", "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/3186243628/B.jpg?323000000", '1₩', '유제품'],
+        [4, "소고기 안심", "https://contents.lotteon.com/itemimage/20230817110144/LO/21/67/35/49/78/bndl_img/LO2167354978_1.jpg/dims/optimize/dims/resizemc/400x400", '500,000₩', '고기']
     ]
-        
+
     const [product, setProduct] = useState();
-    const CateList = lists.map((v) => (<CategoryList name={v[1]} icon={v[2]}/>))
+    const CateList = lists.map((v) => (<CategoryList name={v[1]} icon={v[2]} cate={v[4]} price={v[3]} id={v[0]} />))
 
     //리스트 받아오기
     const getProduct = async() => {
+        const local = "http://127.0.0.1:8000/api/products/"
+        const aws = "http://ec2-54-180-79-79.ap-northeast-2.compute.amazonaws.com"
         try {
             const res = await axios.get(
-                "http://ec2-54-180-79-79.ap-northeast-2.compute.amazonaws.com/api/products/"
+                local,
             )
             setProduct(res.data)
             console.log(res.data)
@@ -101,26 +103,30 @@ function Home() {
                         </Center>
                     </Center>
                 </Container>
-                        {/* 백엔드 연결 시
-                        {product&&product.map((item, index) => 
+                        {/* 백엔드 연결 시 */}
+                        {/* {product&&product.map((item, index) => 
                         <Box 
                             key={index}
                             className="BestList" 
                             style={{display: "flow"}}>
-                            <BestProduct name={item.products_name} icon={item.photo} price={item.id} id={item.id} />
+                            <BestProduct 
+                                name={item.products_name} 
+                                icon={`http://127.0.0.1:8000/api/products${item.photo}`} 
+                                price={item.id} 
+                                id={item.id} />
                         </Box>
                         )} */}
 
                         {/* 백엔드 미연결 시 */}
-                        {best&&best.map((item, index) => 
-                        <div 
-                            key={index}>
-                            <BestProduct 
-                                name={item[1]} 
-                                icon={item[2]} 
-                                price={item[3]} 
-                                id={item[0]} />
-                        </div>
+                        {best && best.map((item, index) => 
+                            <div 
+                                key={index}>
+                                <BestProduct 
+                                    name={item[1]} 
+                                    icon={item[2]} 
+                                    price={item[3]} 
+                                    id={item[0]} />
+                            </div>
                         )}
                 <Footer />
             </div>

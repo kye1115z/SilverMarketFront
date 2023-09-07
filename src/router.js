@@ -11,6 +11,8 @@ import ItemVideoRegister from "./Pages/ItemVideoRegister";
 import First from './Pages/First';
 import Mypage from "./Pages/Mypage";
 import GuideSlider from "./Components/GuideSlider";
+import Favo from "./Pages/Favo";
+import DeliverList from "./Pages/DeliverList";
 
 function Router() {
   return (
@@ -30,7 +32,11 @@ function Router() {
         <Route path="/itemselfregister" element={<ItemSelfRegister />} />
         <Route path="/itemvideoregister" element={<ItemVideoRegister />} />
         
+        <Route path="/favo" element={<Favo />} />
         <Route path="/mypage" element={<Mypage />} />
+        <Route path="/deliver" element={<DeliverList />} />
+        <Route path="/mypage" element={<Mypage />} />
+        
         <Route path="/guide" element={<GuideSlider />} />
       </Routes>
     </BrowserRouter>
