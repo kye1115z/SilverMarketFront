@@ -32,7 +32,6 @@ function Router() {
         <Route path="/itemvideoregister2" element={<ItemVideoRegister2 />} />
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/guide" element={<GuideSlider />} />
-        <Route path="/Test1" element={<Test1 />} />
         <Route path="/Favo" element={<Favo />} />
       </Routes>
     </BrowserRouter>
