@@ -69,23 +69,23 @@ export default function Login() {
   // 로그인 버튼 클릭 시
   const onClickConfirmButton = async() => {
       try {   
-        const csrfToken = window.csrfToken;
-        console.log("try!")
-        const res = await axios.post(
-            'http://127.0.0.1:8000/api/accounts/login/', 
-            {
-                username: ID,
-                password: pw,
-                'X-CSRFToken': csrfToken
-            },
-            // {
-            //   headers: {
-            //       'X-CSRFToken': csrfToken
-            //   },
-            // }
-        );
-        console.log(res.data.detail);
-        // navigate("/");
+        // const csrfToken = window.csrfToken;
+        // console.log("try!")
+        // const res = await axios.post(
+        //     'http://127.0.0.1:8000/api/accounts/login/', 
+        //     {
+        //         username: ID,
+        //         password: pw,
+        //         'X-CSRFToken': csrfToken
+        //     },
+        //     {
+        //       headers: {
+        //           'X-CSRFToken': csrfToken
+        //       },
+        //     }
+        // );
+        // console.log(res.data.detail);
+        navigate("/");
     }
     catch (e) {
         console.error(e);

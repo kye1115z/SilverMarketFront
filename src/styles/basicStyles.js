@@ -66,8 +66,8 @@ export const InputTitle = styled.p`
 `;
 
 export const BackBtn = styled.button`
-background-color: transparent;
-border: none;
-display: flex;
-align-items: center;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
 `;
