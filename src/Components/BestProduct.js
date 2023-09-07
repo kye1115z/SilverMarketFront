@@ -14,7 +14,7 @@ function BestProduct(lists) {
 
     const onClick = () => {
         setId(lists.id)
-        navigate('detail', {
+        navigate('/detail', {
             state: { id }
         })
     }
@@ -24,7 +24,8 @@ function BestProduct(lists) {
         <GlobalStyle />
         <Box>
             <ImgButton onClick={onClick}> 
-                <img src={lists.icon} width="100%" height="80%" alt="best"/>
+                <img src={lists.icon} width="100%" height="95%" alt="best"
+                        style={{borderTopRightRadius: "16px", borderTopLeftRadius: "16px"}}/>
             </ImgButton>
             <InfoButton onClick={onClick}>
                 <Info>{lists.name}</Info>
@@ -60,8 +61,9 @@ const ImgButton = styled.div`
     height: 65%;
     display: flex;
     justify-content: center;
-    align-items: center;
     margin-bottom: 5px;
+    overflow: hidden;
+    object-fit: cover;
 `;
 
 const InfoButton = styled.div`

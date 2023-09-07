@@ -227,8 +227,8 @@ function Signup() {
                 }
             );
             console.log(res.data);
-            // alert("회원가입에 성공했습니다!");
-            // navigate("/login");
+            alert("회원가입에 성공했습니다!");
+            navigate("/login");
         }
         catch (e) {
             console.error(e);
