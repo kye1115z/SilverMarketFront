@@ -215,24 +215,24 @@ function Signup() {
         console.log(phone)
         console.log(addr)
         try {   
-            console.log("try!")
-            const res = await axios.post(
-                'http://127.0.0.1:8000/api/accounts/signup/', 
-                {
-                    username: id,
-                    email: email,
-                    password: pw,
-                    phone: phone,
-                    address: addr
-                }
-            );
-            console.log(res.data);
-            // alert("회원가입에 성공했습니다!");
-            // navigate("/login");
+        //     console.log("try!")
+        //     const res = await axios.post(
+        //         'http://127.0.0.1:8000/api/accounts/signup/', 
+        //         {
+        //             username: id,
+        //             email: email,
+        //             password: pw,
+        //             phone: phone,
+        //             address: addr
+        //         }
+        //     );
+        //     console.log(res.data);
         }
         catch (e) {
             console.error(e);
         }
+        alert("회원가입에 성공했습니다!");
+        navigate("/login");
 
     }
 
@@ -295,7 +295,7 @@ function Signup() {
                     onChange={onChangePw}
                     className="inputPW"
                     name="pw"
-                    type="text"
+                    type="password"
                     placeholder=""
                 />
                 <P>{pwMsg}</P>

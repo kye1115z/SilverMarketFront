@@ -8,9 +8,9 @@ function First() {
         <GlobalStyle />
             <BackContainer>
                 <Container>
-                    <div style={{height: "130px", backgroundColor: "blue"}}></div>
+                    <div style={{height: "136px"}}></div>
                     <P>은 빛 시 장</P>
-                    <Btn onClick={() => {window.location.href="/"}}>
+                    <Btn onClick={() => {window.location.href="/home"}}>
                         구매하기
                     </Btn>
                     <Btn onClick={() => {window.location.href="/itemregister"}}>
@@ -33,14 +33,14 @@ const BackContainer = styled.div`
 `;
 
 const P = styled.p`
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bolder;
     background: #4AB846;
     background: linear-gradient(to top left, #4AB846 0%, #16692D 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 90px;
+    margin-bottom: 70px;
 `;
 
 const Btn = styled.button`

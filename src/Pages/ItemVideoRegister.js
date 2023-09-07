@@ -4,6 +4,7 @@ import { Container, Header, HeaderText } from "../styles/basicStyles";
 import { GoChevronLeft } from "react-icons/go";
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function ItemVideoRegister() {
 
@@ -44,26 +45,35 @@ function ItemVideoRegister() {
       console.log("hi")
       console.log(allow)
       console.log(color)
+    } else {
+      setAllow(false)
+      setColor("#BCC6BF")
     }
   }, [checkedList])
 
   console.log(checkedList.length)
 
-  const Button = styled.button`
-  width: 75vw;
-  height: 65px;
-  border: none;
-  border-radius: 15px;
-  font-size: 24px;
-  color: white;
-  background: ${color};
-  margin-bottom: 20px;
+  const BtnLabel = styled.label`
+    width: 75vw;
+    height: 65px;
+    border: none;
+    border-radius: 15px;
+    font-size: 24px;
+    color: white;
+    background: ${color};
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 `; 
+
+
 
   // 비디오 저장
   const [file, setFile] = useState({});
 
-  const imageUpload = e => {
+  const videoUpload = e => {
     const videoTpye = e.target.files[0].type.includes('video');
 
     setFile({
@@ -73,10 +83,10 @@ function ItemVideoRegister() {
     console.log(videoTpye);
   };
 
+  const navigate = useNavigate()
+
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log("img")
-
 
     try {   
       console.log("try!")
@@ -85,20 +95,22 @@ function ItemVideoRegister() {
       formData.append("title", "맛있는 고구마");
       formData.append("video_file", file.url);
 
-      const res = await axios.post(
-          'http://127.0.0.1:8000/api/videos/', formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            }
-          },
+      // const res = await axios.post(
+      //     'http://ec2-54-180-79-79.ap-northeast-2.compute.amazonaws.com/api/videos/', formData,
+      //     {
+      //       headers: {
+      //         "Content-Type": "multipart/form-data",
+      //       }
+      //     },
           
-      );
-      console.log(res);
+      // );
+      // console.log(res);
   }
   catch (e) {
       console.error(e);
   }
+  alert("동영상이 성공적으로 전송되었습니다!")
+  navigate("/home")
   }
 
   return (
@@ -122,8 +134,8 @@ function ItemVideoRegister() {
             <Text style={{
                 fontSize: "22px", fontWeight: "bolder", color: "#23AA49"
             }}>영상을 선택해주세요!</Text>
-            <Text style={{fontSize: "22px"}}>영상의 길이는 5분 내로 제한됩니다.</Text>
-            <Text style={{fontSize: "22px"}}>영상 속에 다음 정보가 포함되었는지 확인해주세요.</Text>
+            <Text style={{fontSize: "22px"}}>영상의 길이는 5분 내로 <br />제한됩니다.</Text>
+            <Text style={{fontSize: "22px"}}>영상 속에 다음 정보가  <br />포함되었는지 확인해주세요.</Text>
           </Container>
           <Container style={{paddingTop: "5px"}}>
             {checkBoxList.map((item, idx) => (
@@ -139,17 +151,16 @@ function ItemVideoRegister() {
             ))}
           </Container>
         </Box>
-        <Button
-          disabled={allow}
-        >
-          동영상 선택하기
-          <VideoInput 
-            type="file"
-            accept="video/*"
-            onChange={imageUpload}
-            />
-        </Button>
-        {file.video && <video src={file.url} controls width="350px" />}
+        <div>
+        <BtnLabel for="video_file">동영상 선택하기</BtnLabel>
+        <VideoInput 
+          id="video_file"
+          type="file"
+          accept="video/*"
+          onChange={videoUpload}
+        />
+        </div>
+        {file.video && <video src={file.url} controls width="300px" style={{marginBottom: "30px"}}/>}
         <Submit onClick={onSubmit}>
           동영상 보내기
         </Submit>
@@ -192,4 +203,6 @@ const Input = styled.input`
 `;
 
 const VideoInput = styled.input`
+  width: 0;
+  height: 0;
 `;

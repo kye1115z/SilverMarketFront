@@ -5,7 +5,10 @@ import GlobalStyle from "../GlobalStyle";
 import { Container, Text, Input } from "../styles/basicStyles.js";
 import axios from "axios";
 
-
+const user = {
+  id: "test1234",
+  pw: "asdf1234!"
+}
 
 export default function Login() {
   const [ID, setID] = useState("");
@@ -69,23 +72,29 @@ export default function Login() {
   // 로그인 버튼 클릭 시
   const onClickConfirmButton = async() => {
       try {   
-        const csrfToken = window.csrfToken;
-        console.log("try!")
-        const res = await axios.post(
-            'http://127.0.0.1:8000/api/accounts/login/', 
-            {
-                username: ID,
-                password: pw,
-                'X-CSRFToken': csrfToken
-            },
-            // {
-            //   headers: {
-            //       'X-CSRFToken': csrfToken
-            //   },
-            // }
-        );
-        console.log(res.data.detail);
-        // navigate("/");
+        // const csrfToken = window.csrfToken;
+        // console.log("try!")
+        // const res = await axios.post(
+        //     'http://127.0.0.1:8000/api/accounts/login/', 
+        //     {
+        //         username: ID,
+        //         password: pw,
+        //         'X-CSRFToken': csrfToken
+        //     },
+        //     {
+        //       headers: {
+        //           'X-CSRFToken': csrfToken
+        //       },
+        //     }
+        // );
+        // console.log(res.data.detail);
+
+        // 연결 안 될 시
+        if(ID === user.id && pw === user.pw) {
+          navigate("/");
+        } else {
+          alert("아이디 혹은 비밀번호가 틀렸습니다!")
+        }
     }
     catch (e) {
         console.error(e);
@@ -98,7 +107,7 @@ export default function Login() {
     <GlobalStyle />
     <Container>
       <LogoBox>
-        <Logo src="https://image.dongascience.com/Photo/2020/03/5bddba7b6574b95d37b6079c199d7101.jpg" />
+        <Logo src="../img/SilverMarketLogo.png" />
       </LogoBox>
         <div 
           className="contentWrap" 
@@ -182,6 +191,7 @@ const Logo = styled.img`
   width: 70%;
   height: 52px;
   overflow: hidden;
+  object-fit: cover;
 `;
 
 const Foot = styled.div`

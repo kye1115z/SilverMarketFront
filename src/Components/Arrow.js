@@ -1,5 +1,3 @@
-import { styled } from "styled-components";
-
 export function NextArrow(props) {
     const { onClick } = props;
     console.log(props)
@@ -9,13 +7,13 @@ export function NextArrow(props) {
 
     return (
         <button style={{
-            border: "none", borderRadius: "100px", backgroundColor: "#23AA49",
-            width: "80px", height: "45px", color: "white", fontSize: "16px", fontWeight: "bold",
-            position: "absolute", bottom: "2%", right: "2%"
+            border: "none", borderRadius: "20px", backgroundColor: "#23AA49",
+            width: "45px", height: "45px", color: "white", fontSize: "28px", fontWeight: "bold",
+            position: "absolute", bottom: "2%", right: "3%"
             }}
             onClick={onClick}
         >
-            다음
+            ⇨
         </button>
     )
 }

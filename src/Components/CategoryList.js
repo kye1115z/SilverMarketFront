@@ -1,10 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import GlobalStyle from "../GlobalStyle";
 import { styled } from "styled-components";
 
 function CategoryList(lists) {
 
+    const navigation = useNavigate()
+
     const onClick = () => {
         alert("클릭!")
+        navigation("/categoryList", lists)
     }
 
     return (
