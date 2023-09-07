@@ -107,7 +107,7 @@ export default function Login() {
     <GlobalStyle />
     <Container>
       <LogoBox>
-        <Logo src="https://image.dongascience.com/Photo/2020/03/5bddba7b6574b95d37b6079c199d7101.jpg" />
+        <Logo src="../img/SilverMarketLogo.png" />
       </LogoBox>
         <div 
           className="contentWrap" 
@@ -191,6 +191,7 @@ const Logo = styled.img`
   width: 70%;
   height: 52px;
   overflow: hidden;
+  object-fit: cover;
 `;
 
 const Foot = styled.div`
