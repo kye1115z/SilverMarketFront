@@ -8,10 +8,11 @@ import ConfirmOrder from "./Pages/ConfirmOrder";
 import ItemRegister from "./Pages/ItemRegister";
 import ItemSelfRegister from "./Pages/ItemSelfRegister";
 import ItemVideoRegister from "./Pages/ItemVideoRegister";
-import First from './Pages/First';
+import ItemVideoRegister2 from "./Pages/ItemVideoRegister2";
+import First from "./Pages/First";
 import Mypage from "./Pages/Mypage";
 import GuideSlider from "./Components/GuideSlider";
-import ItemVideoRegister2 from "./Pages/ItemVideoRegister2";
+
 function Router() {
   return (
     <BrowserRouter>
