@@ -1,17 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import Login from "./Pages/Login";
-import Signup from "./Pages/Signup";
-import Detail from "./Pages/Detail";
-import Order from "./Pages/Order";
-import ConfirmOrder from "./Pages/ConfirmOrder";
-import ItemRegister from "./Pages/ItemRegister";
-import ItemSelfRegister from "./Pages/ItemSelfRegister";
-import ItemVideoRegister from "./Pages/ItemVideoRegister";
-import First from './Pages/First';
-import Mypage from "./Pages/Mypage";
-import GuideSlider from "./Components/GuideSlider";
-import ItemVideoRegister2 from "./Pages/ItemVideoRegister2";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './Pages/Home'
+import Login from './Pages/Login'
+import Signup from './Pages/Signup'
+import Detail from './Pages/Detail'
+import Order from './Pages/Order'
+import ConfirmOrder from './Pages/ConfirmOrder'
+import ItemRegister from './Pages/ItemRegister'
+import ItemSelfRegister from './Pages/ItemSelfRegister'
+import ItemVideoRegister from './Pages/ItemVideoRegister'
+import First from './Pages/First'
+import Mypage from './Pages/Mypage'
+import GuideSlider from './Components/GuideSlider'
+import ItemVideoRegister2 from './Pages/ItemVideoRegister2'
+import Test1 from './Test/Test1'
+import Favo from './Pages/Favo'
+
 function Router() {
   return (
     <BrowserRouter>
@@ -29,8 +32,10 @@ function Router() {
         <Route path="/itemvideoregister2" element={<ItemVideoRegister2 />} />
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/guide" element={<GuideSlider />} />
+        <Route path="/Test1" element={<Test1 />} />
+        <Route path="/Favo" element={<Favo />} />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
-export default Router;
+export default Router
