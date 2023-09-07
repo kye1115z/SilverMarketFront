@@ -8,11 +8,14 @@ import ConfirmOrder from "./Pages/ConfirmOrder";
 import ItemRegister from "./Pages/ItemRegister";
 import ItemSelfRegister from "./Pages/ItemSelfRegister";
 import ItemVideoRegister from "./Pages/ItemVideoRegister";
-import First from './Pages/First';
+import ItemVideoRegister2 from "./Pages/ItemVideoRegister2";
+import First from "./Pages/First";
 import Mypage from "./Pages/Mypage";
 import GuideSlider from "./Components/GuideSlider";
+
 import Favo from "./Pages/Favo";
 import DeliverList from "./Pages/DeliverList";
+
 
 function Router() {
   return (
